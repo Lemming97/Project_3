@@ -8,8 +8,22 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
 
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
+
+//establish apollo client
+const client = new ApolloClient({
+  request: (operation) => {
+    const token = localStorage.getItem("id_token");
+
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : "",
+      },
+    });
+  },
+  uri: "/graphql",
+});
 
 function App() {
   const [currentTab, handleTabChange] = useState("about");
@@ -32,14 +46,25 @@ function App() {
   };
 
   return (
-    <>
-      <Header
-        currentTab={currentTab}
-        handleTabChange={handleTabChange}
-      ></Header>
-      <main>{renderTab()}</main>
-      <Footer></Footer>
-    </>
+    <ApolloProvider client={client}>
+      <Router>
+        <>
+          <Header
+            currentTab={currentTab}
+            handleTabChange={handleTabChange}
+          ></Header>
+          <main>{renderTab()}</main>
+
+          {/* <Switch>
+            <Route exact path="/" component={SearchBooks} />
+            <Route exact path="/saved" component={SavedBooks} />
+            <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
+          </Switch> */}
+
+          <Footer></Footer>
+        </>
+      </Router>
+    </ApolloProvider>
   );
 }
 
