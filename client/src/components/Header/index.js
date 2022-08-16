@@ -9,7 +9,7 @@ function Header(props) {
       <section>
         <header className="flex-row px-1">
           <div>
-            <h1>Tester</h1>
+            <h1>Lindsey Martin's Portfolio</h1>
           </div>
           <div>
             <Nav
@@ -29,7 +29,11 @@ function Header(props) {
           /> */}
 
           <h2>Welcome</h2>
-          <p>Test</p>
+          <p>
+            Welcome to Lindsey Martin's portfolio page built with React. Here,
+            you can find a small sample of the projects she has worked on over
+            the course of the program.
+          </p>
         </div>
       </section>
     </div>
