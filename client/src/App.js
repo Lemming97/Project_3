@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "../src/components/Header";
-import About from "../src/components/About";
+import About from "./components/Landing";
 // import { Helmet } from "react-helmet";
 import Footer from "../src/components/Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
