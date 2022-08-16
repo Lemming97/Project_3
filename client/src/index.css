@@ -64,13 +64,13 @@ header {
   flex-wrap: wrap;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
-  /* background-image: url("../src/assets/cover/5330558.jpg"); */
-  background-size: cover;
-  background-position: center;
+  /* top: 0;
+  background-image: url("../src/assets/small/SphereSmall.png");
+  background-size: 10%;
+  background-position: left;
   background-attachment: fixed;
   background-position: 80%;
-  z-index: 9999;
+  z-index: 9999; */
 
 }
 
@@ -84,6 +84,13 @@ header h1 {
 
 .header-icon {
   height: auto;
+  top: 0;
+  background-image: url("../src/assets/small/SphereSmall.png");
+  background-size: 10%;
+  background-position: left;
+  background-attachment: fixed;
+  background-position: 80%;
+  z-index: 9999;
 }
 
 
@@ -132,8 +139,8 @@ header nav ul li a:hover {
 
 /* Hero Style Start */
 .hero {
-  /* background-image: url("../src/assets/cover/5330558.jpg"); */
-  background-size: cover;
+  /* background-image: url("../src/assets/small/SphereSmall.png"); */
+  background-size: contain;
   background-position: center;
   display: flex;
   justify-content: center;

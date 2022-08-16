@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../Nav";
-import SphereSmall from "../../assets/small/SphereSmall.png";
+import SphereSmall from "../";
 
 function Header(props) {
   const { currentTab, handleTabChange } = props;
@@ -9,11 +9,11 @@ function Header(props) {
     <div>
       <section>
         <header className="flex-row px-1">
-          <div>
+          <div className="header-icon">
             <img
               src={SphereSmall}
               className="header-icon"
-              style={{ width: "100%" }}
+              style={{ width: "20%" }}
               alt="SphereSmall"
             />
           </div>
