@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../Nav";
-import SphereSmall from "../";
+import SphereSmall from "../../assets/small/SphereSmall.png";
 
 function Header(props) {
   const { currentTab, handleTabChange } = props;

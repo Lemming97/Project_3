@@ -85,7 +85,7 @@ header h1 {
 .header-icon {
   height: auto;
   top: 0;
-  background-image: url("../src/assets/small/SphereSmall.png");
+  /* background-image: url("../src/assets/small/SphereSmall.png"); */
   background-size: 10%;
   background-position: left;
   background-attachment: fixed;
@@ -215,3 +215,171 @@ header nav ul li a:hover {
 }
 
 /*end intro*/
+
+
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 1350px) {
+
+  header h1,
+  .header-icon {
+    width: 100%;
+    text-align: center;
+  }
+
+  header nav {
+    margin: 7px;
+    margin-left: 250px;
+    /* justify-content: center; */
+    align-items: center;
+
+
+  }
+}
+
+@media screen and (max-width: 980px) {
+  header {
+    padding-bottom: 0;
+    justify-content: center;
+    position: relative;
+
+  }
+
+  header h1,
+  .header-icon {
+    width: 100%;
+    text-align: center;
+  }
+
+  header nav ul {
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  header nav ul li a {
+    font-size: 20px;
+  }
+
+  footer h2,
+  footer div,
+  footer p {
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-cta {
+    width: 100%;
+  }
+
+  .hero-cta {
+    text-align: center;
+  }
+
+  .section-title {
+    width: 80%;
+  }
+
+
+  .contact-info {
+    flex: 1 100%;
+  }
+
+  #contact-list {
+    display: block;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+  }
+
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+  /* section {
+    padding: 30px 15px;
+  } */
+
+  .job h3 {
+    flex: 1 100%;
+    text-align: center;
+  }
+
+  .job-info {
+    flex: 2 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .job-img,
+  .intro-img {
+    flex: 0 32%;
+    margin-right: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .job-img {
+    margin-right: 100px;
+  }
+
+  .job-text {
+    flex: 100%;
+  }
+
+  #contact-list {
+    display: block;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+  }
+}
+
+
+@media screen and (max-width: 575px) {
+
+
+  .section-title {
+    width: 95%;
+  }
+
+  .intro p,
+  .download-intro p {
+    width: 100%;
+    padding: 30px 15px;
+  }
+
+  .job-img {
+    margin-right: 100px;
+  }
+
+  .contact-info {
+    text-align: center;
+
+  }
+
+  .contact-info li {
+    font-size: 25px;
+    justify-content: space-between;
+
+
+  }
+
+  #contact-list {
+    font-size: 25px;
+    display: block;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    margin-right: 120px;
+
+  }
+
+  .contact-info>* {
+    flex: 0 100%;
+  }
+
+
+}
