@@ -6,8 +6,8 @@ import React from "react";
 
 //default image will include the Ask me sphere icon and click event
 
-const Login = () => {
-  return <p>Login</p>;
+const CashMoney = () => {
+  return <p>Cash Money</p>;
 };
 
-export default Login;
+export default CashMoney;
