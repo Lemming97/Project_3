@@ -13,9 +13,12 @@ code {
 
 :root {
   /*main colors */
-  --primary-color: #0E5259;
-  --secondary-color: #75BFB2;
-  --tertiary-color: #D5F2EA;
+  --primary-color: #545454;
+  --secondary-color: #83a2ab;
+  --tertiary-color: #d9d9d9;
+  --red: #F45F50;
+  --white: #ffffff;
+
 }
 
 #root {
@@ -55,7 +58,7 @@ body {
 /* start apply styles to <header> */
 header {
   padding: 20px 35px;
-  background-color: #D5F2EA;
+  background-color: #d9d9d9;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -79,6 +82,9 @@ header h1 {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.header-icon {
+  height: auto;
+}
 
 
 header a {
