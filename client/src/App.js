@@ -40,7 +40,7 @@ function App() {
       ></Header>
       <main>
         Test
-        {/* {renderTab()} */}
+        {renderTab()}
         Test test test
       </main>
       <Footer></Footer>
