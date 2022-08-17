@@ -15,46 +15,62 @@ function Nav(props) {
       <ul className="nav nav-tabs">
         <li className="nav-item">
           <a
-            href="#about"
-            onClick={() => handleTabChange("About")}
+            href="#sorcerer-sphere"
+            onClick={() => handleTabChange("Sorcerer's Sphere")}
             // Check to see if the currentTab is `About`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
-            className={currentTab === "About" ? "nav-link active" : "nav-link"}
+            className={
+              currentTab === "Sorcerer's Sphere"
+                ? "nav-link active"
+                : "nav-link"
+            }
           >
-            About
+            Sorcerer's Sphere
           </a>
         </li>
         <li className="nav-item">
           <a
-            href="#portfolio"
-            onClick={() => handleTabChange("Portfolio")}
+            href="#magic-mark"
+            onClick={() => handleTabChange("Magic Mark")}
             // Check to see if the currentTab is `Portfolio`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
             className={
-              currentTab === "Portfolio" ? "nav-link active" : "nav-link"
+              currentTab === "Magic Mark" ? "nav-link active" : "nav-link"
             }
           >
-            Portfolio
+            Magic Mark
           </a>
         </li>
         <li className="nav-item">
           <a
-            href="#contact"
-            onClick={() => handleTabChange("Contact")}
+            href="#light-worker"
+            onClick={() => handleTabChange("Light Worker")}
             // Check to see if the currentTab is `Contact`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
             className={
-              currentTab === "Contact" ? "nav-link active" : "nav-link"
+              currentTab === "Light Worker" ? "nav-link active" : "nav-link"
             }
           >
-            Contact
+            Light Worker
           </a>
         </li>
         <li className="nav-item">
           <a
-            href="#resume"
-            onClick={() => handleTabChange("Resume")}
-            // Check to see if the currentTab is `Resume`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
-            className={currentTab === "Resume" ? "nav-link active" : "nav-link"}
+            href="#cash-money"
+            onClick={() => handleTabChange("Cash Money")}
+            // Check to see if the currentTab is `Contact`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+            className={
+              currentTab === "Cash Money" ? "nav-link active" : "nav-link"
+            }
           >
-            Resume
+            Cash Money
+          </a>
+        </li>
+        <li className="nav-item">
+          <a
+            href="#login"
+            onClick={() => handleTabChange("Login")}
+            // Check to see if the currentTab is `Resume`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+            className={currentTab === "Login" ? "nav-link active" : "nav-link"}
+          >
+            Login/Signup
           </a>
         </li>
       </ul>

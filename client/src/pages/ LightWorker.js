@@ -6,12 +6,12 @@ import React from "react";
 
 //default image will include the Ask me sphere icon and click event
 
-const Home = () => {
+function LightWorker() {
   return (
     <section id="about-me" className="my-5 intro">
       <div class="flex-row">
         <h1 id="about" className="section-title primary-border">
-          Home
+          Ask and you shall Recieve
         </h1>
       </div>
       <div className="flex-row">
@@ -24,6 +24,6 @@ const Home = () => {
       </div>
     </section>
   );
-};
+}
 
-export default Home;
+export default LightWorker;
