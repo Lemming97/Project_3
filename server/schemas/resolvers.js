@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User } = require("../models");
+const { User, Sphere1, Sphere2, Sphere3, Sphere4 } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -15,6 +15,46 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
+    getSphere1: async (parent, { _id }, context) => {
+      if (context.user) {
+        const sphereData = await Sphere1.findOne({ _id: _id })
+          .select("-__v");
+
+        return sphereData;
+      }
+
+      throw new AuthenticationError("Not logged in");
+    },
+    getSphere2: async (parent, { _id }, context) => {
+      if (context.user) {
+        const sphereData = await Sphere2.findOne({ _id: _id })
+          .select("-__v");
+
+        return sphereData;
+      }
+
+      throw new AuthenticationError("Not logged in");
+    },
+    getSphere3: async (parent, { _id }, context) => {
+      if (context.user) {
+        const sphereData = await Sphere3.findOne({ _id: _id })
+          .select("-__v");
+
+        return sphereData;
+      }
+
+      throw new AuthenticationError("Not logged in");
+    },
+    getSphere4: async (parent, { _id }, context) => {
+      if (context.user) {
+        const sphereData = await Sphere4.findOne({ _id: _id })
+          .select("-__v");
+
+        return sphereData;
+      }
+
+      throw new AuthenticationError("Not logged in");
+    }
   },
 
   Mutation: {
