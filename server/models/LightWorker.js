@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const sphere2Schema = new Schema(
+const sphere3Schema = new Schema(
     {
         text: {
             type: String,
@@ -14,10 +14,10 @@ const sphere2Schema = new Schema(
         }
     }
 )
-sphere2Schema.virtual('voteCount').get(function () {
+sphere3Schema.virtual('voteCount').get(function () {
     return this.votes.length;
 });
 
-const Sphere2 = model("Sphere2", sphere2Schema);
+const LightWorker = model("LightWorker", sphere3Schema);
 
-module.exports = Sphere2;
+module.exports = LightWorker;

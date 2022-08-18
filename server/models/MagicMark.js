@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const sphere1Schema = new Schema(
+const sphere2Schema = new Schema(
     {
         text: {
             type: String,
@@ -14,10 +14,10 @@ const sphere1Schema = new Schema(
         }
     }
 )
-sphere1Schema.virtual('voteCount').get(function () {
+sphere2Schema.virtual('voteCount').get(function () {
     return this.votes.length;
 });
 
-const Sphere1 = model("Sphere1", sphere1Schema);
+const MagicMark = model("MagicMark", sphere2Schema);
 
-module.exports = Sphere1;
+module.exports = MagicMark;

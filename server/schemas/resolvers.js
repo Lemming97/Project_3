@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Sphere1, Sphere2, Sphere3, Sphere4 } = require("../models");
+const { User, SorcerersSphere, MagicMark, LightWorker, CashMoney } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -14,9 +14,9 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    getSphere1: async (parent, { _id }, context) => {
+    getSorcerersSphere: async (parent, { _id }, context) => {
       if (context.user) {
-        const sphereData = await Sphere1.findOne({ _id: _id })
+        const sphereData = await SorcerersSphere.findOne({ _id: _id })
           .select("-__v");
 
         return sphereData;
@@ -24,9 +24,9 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    getSphere2: async (parent, { _id }, context) => {
+    getMagicMark: async (parent, { _id }, context) => {
       if (context.user) {
-        const sphereData = await Sphere2.findOne({ _id: _id })
+        const sphereData = await MagicMark.findOne({ _id: _id })
           .select("-__v");
 
         return sphereData;
@@ -34,9 +34,9 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    getSphere3: async (parent, { _id }, context) => {
+    getLightWorker: async (parent, { _id }, context) => {
       if (context.user) {
-        const sphereData = await Sphere3.findOne({ _id: _id })
+        const sphereData = await LightWorker.findOne({ _id: _id })
           .select("-__v");
 
         return sphereData;
@@ -44,9 +44,9 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    getSphere4: async (parent, { _id }, context) => {
+    getCashMoney: async (parent, { _id }, context) => {
       if (context.user) {
-        const sphereData = await Sphere4.findOne({ _id: _id })
+        const sphereData = await CashMoney.findOne({ _id: _id })
           .select("-__v");
 
         return sphereData;
