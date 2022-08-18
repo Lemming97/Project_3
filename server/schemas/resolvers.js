@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, SorcerersSphere, MagicMark, LightWorker } = require("../models");
+const { User, SorcerersSphere, MagicMark, LightWorker, Sphericle } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -14,32 +14,26 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    getSorcerersSphere: async (parent, { _id }, context) => {
-      if (context.user) {
-        const sphereData = await SorcerersSphere.findOne({ _id: _id })
-          .select("-__v");
+    getAllUsers: async () => {
+      const userData = await User.findAll({})
+        .select('-__v -password');
 
-        return sphereData;
+      return userData;
+    },
+    getSingleSphericle: async (parent, { _id }, context) => {
+      if (context.user) {
+        const data = await Sphericle.findOne({ _id: _id })
+          .select('-__v');
       }
 
       throw new AuthenticationError("Not logged in");
     },
-    getMagicMark: async (parent, { _id }, context) => {
+    getByFacet: async (parent, { facet }, context) => {
       if (context.user) {
-        const sphereData = await MagicMark.findOne({ _id: _id })
-          .select("-__v");
+        const facetData = await Sphericle.findAll({ facet: facet })
+          .select('-__v');
 
-        return sphereData;
-      }
-
-      throw new AuthenticationError("Not logged in");
-    },
-    getLightWorker: async (parent, { _id }, context) => {
-      if (context.user) {
-        const sphereData = await LightWorker.findOne({ _id: _id })
-          .select("-__v");
-
-        return sphereData;
+        return facetData;
       }
 
       throw new AuthenticationError("Not logged in");
@@ -69,6 +63,33 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    upvote: async (parent, { _id, voteCount }, context) => {
+      if (context.user) {
+        const updatedSphericle = await Sphericle.findOneandUpdate(
+          { _id: _id }, 
+          // this may not be the way to augment. Create separate function const?
+          { voteCount: voteCount++ },
+          { new: true }
+          )
+
+        return updatedSphericle;
+      }
+
+      throw new AuthenticationError("Not logged in")
+    },
+    downvote: async (parent, { _id }, context) => {
+      if (context.user) {
+        const updatedSphericle = await Sphericle.findOneandUpdate(
+          { _id: _id }, 
+          { voteCount: voteCount-- },
+          { new: true }
+          )
+
+        return updatedSphericle;
+      }
+
+      throw new AuthenticationError("Not logged in")
+    }
   },
 };
 
