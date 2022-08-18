@@ -73,9 +73,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         {/* <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/thought/:id" element={<SingleThought />} />
+    
         <Route path="*" element={<NoMatch />} /> */}
       </Routes>
     </Router>
