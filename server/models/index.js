@@ -1,7 +1,6 @@
 const User = require("./User");
-const Sphere1 = require('./SorcerersSphere');
-const Sphere2 = require('./MagicMark');
-const Sphere3 = require('./LightWorker');
-const Sphere4 = require('./CashMoney');
+const SorcerersSphere = require('./SorcerersSphere');
+const MagicMark = require('./MagicMark');
+const LightWorker = require('./LightWorker');
 
-module.exports = { User, Sphere1, Sphere2, Sphere3, Sphere4 };
+module.exports = { User, SorcerersSphere, MagicMark, LightWorker };

@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, SorcerersSphere, MagicMark, LightWorker, CashMoney } = require("../models");
+const { User, SorcerersSphere, MagicMark, LightWorker } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -37,16 +37,6 @@ const resolvers = {
     getLightWorker: async (parent, { _id }, context) => {
       if (context.user) {
         const sphereData = await LightWorker.findOne({ _id: _id })
-          .select("-__v");
-
-        return sphereData;
-      }
-
-      throw new AuthenticationError("Not logged in");
-    },
-    getCashMoney: async (parent, { _id }, context) => {
-      if (context.user) {
-        const sphereData = await CashMoney.findOne({ _id: _id })
           .select("-__v");
 
         return sphereData;
