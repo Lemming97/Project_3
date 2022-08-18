@@ -18,6 +18,6 @@ sphere4Schema.virtual('voteCount').get(function () {
     return this.votes.length;
 });
 
-const Sphere4 = model("Sphere4", sphere4Schema);
+const CashMoney = model("CashMoney", sphere4Schema);
 
-module.exports = Sphere4;
+module.exports = CashMoney;

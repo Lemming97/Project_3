@@ -4,22 +4,22 @@ const typeDefs = gql`
   type Query {
     me: User
   }
-  type Sphere1 {
+  type SorcerersSphere {
     _id: ID
     text: String
     voteCount: Int
   }
-  type Sphere2 {
+  type MagicMark {
     _id: ID
     text: String
     voteCount: Int
   }
-  type Sphere3 {
+  type LightWorker {
     _id: ID
     text: String
     voteCount: Int
   }
-  type Sphere4 {
+  type CashMoney {
     _id: ID
     text: String
     voteCount: Int
