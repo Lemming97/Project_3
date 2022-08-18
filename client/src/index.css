@@ -377,3 +377,92 @@ header nav ul li a:hover {
 
 
 }
+
+
+
+/* start styles to <footer> */
+footer {
+  background: #595959;
+  font-weight: bold;
+  width: 100%;
+  height: 100px;
+  position: sticky;
+  bottom: 0;
+  /* display: flex; */
+  display: block;
+  justify-content: space-around;
+  /* align-items: center; */
+
+
+}
+
+.footer-container {
+  margin: auto;
+  background: #595959;
+  /* align-items: center; */
+  text-align: center;
+
+
+}
+
+footer ul {
+  background: #595959;
+  /* text-align: center; */
+  justify-content: right;
+  padding-right: 10px;
+  margin: 10px;
+}
+
+footer img {
+  width: 10%;
+  /* margin: auto; */
+}
+
+footer h2 {
+  display: flex;
+  justify-content: center;
+  color: #F2F2F2;
+  font-size: 35px;
+  margin: 0;
+}
+
+footer p,
+footer ul {
+  display: flex;
+  color: #F2F2F2;
+  font-size: 15px;
+  margin: 0;
+  align-items: center;
+
+}
+
+footer div {
+
+  line-height: 1.5;
+  /* text-align: right; */
+}
+
+footer a {
+  color: #75BFB2;
+}
+
+footer a:hover {
+  color: #85A2A6;
+  transition: .5s ease;
+}
+
+.logo {
+  cursor: pointer;
+  list-style: none;
+  font-size: 40px;
+  color: #F2F2F2;
+  display: inline-block;
+}
+
+.logo:hover {
+  color: #328C83;
+  opacity: 0.5;
+  transition: .5s ease;
+}
+
+/* end styles to <footer> */
