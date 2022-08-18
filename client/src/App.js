@@ -11,7 +11,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 
 //pages
-import Navbar from "./components/Navbar";
+import Navbar from "../../client/src/components/Navbar/Navbar";
 import LandingPage from "./pages/LandingPage";
 import "./App.css";
 
