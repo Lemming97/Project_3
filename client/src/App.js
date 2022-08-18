@@ -11,7 +11,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 
 //pages
-import Navbar from "../../client/src/components/Navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import LandingPage from "./pages/LandingPage";
 import "./App.css";
 
@@ -55,6 +55,7 @@ function App() {
     <Router>
       <>
         <Navbar />
+
         <Switch>
           <Route exact path="/" component={LandingPage} />
           {/* <Route exact path="/saved" component={SavedBooks} /> */}
