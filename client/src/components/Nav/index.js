@@ -81,14 +81,15 @@ function Nav(props) {
           </a>
         </li>
         <StripeCheckout
-          // When testing strip use 42 repeated as the cardnumber 123 as the date and any three numbers for the CVC code
+          // When testing strip use 42 repeated as the cardnumber 1234 as the date and any three numbers for the CVC code
           stripeKey="pk_test_51LXcTCI4xTgSuEekRHNVfZ7PdNqf4Zfz2DzqHonYQzLoCQFcjp4gdai2bi27kGivKzzvyUQujpmdORmHTB0ZZLKO00iHSL8Vf0"
           name="Give the Sphere your money"
           panelLabel="Quick click me!"
+          amount={100}
           token={paymentSubmit}
         >
           <li className="nav-item">
-            <a className="nav-link">Donate</a>
+            <a className="nav-link">Donate 1$</a>
           </li>
         </StripeCheckout>
       </ul>
