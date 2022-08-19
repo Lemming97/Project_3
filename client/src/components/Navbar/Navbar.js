@@ -7,7 +7,7 @@ import { useSnackbar } from "notistack";
 const Navbar = () => {
   const [showMobileNav, setShowMobileNav] = useState(false);
 
-  const { enqueueSnackbar} = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
   const paymentSubmit = () => {
     enqueueSnackbar("The Sphere thanks you!");
   };
@@ -58,15 +58,15 @@ const Navbar = () => {
             CashMoney
           </Link>
           <StripeCheckout
-          // When testing strip use 42 repeated as the cardnumber 1234 as the date and any three numbers for the CVC code
-          stripeKey="pk_test_51LXcTCI4xTgSuEekRHNVfZ7PdNqf4Zfz2DzqHonYQzLoCQFcjp4gdai2bi27kGivKzzvyUQujpmdORmHTB0ZZLKO00iHSL8Vf0"
-          name="Give the Sphere your money"
-          panelLabel="Quick click me!"
-          amount={100}
-          token={paymentSubmit}
-        >
-          <div>Donate 1$</div>
-        </StripeCheckout>
+            // When testing strip use 42 repeated as the cardnumber 1234 as the date and any three numbers for the CVC code
+            stripeKey="pk_test_51LXcTCI4xTgSuEekRHNVfZ7PdNqf4Zfz2DzqHonYQzLoCQFcjp4gdai2bi27kGivKzzvyUQujpmdORmHTB0ZZLKO00iHSL8Vf0"
+            name="Give the Sphere your money"
+            panelLabel="Quick click me!"
+            amount={100}
+            token={paymentSubmit}
+          >
+            <div>Donate 1$</div>
+          </StripeCheckout>
           <Link to="/signin-signup" className="text-red tracking-wider">
             Login/Signup
           </Link>
