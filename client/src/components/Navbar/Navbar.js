@@ -16,6 +16,7 @@ const Navbar = () => {
     setShowMobileNav((prevValue) => !prevValue);
   };
 
+  
   return (
     <div className="flex justify-between items-center py-3 px-4 sm:px-14">
       <Link to="/">
