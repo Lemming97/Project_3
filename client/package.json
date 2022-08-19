@@ -16,7 +16,13 @@
     "graphql": "^15.8.0",
     "jwt-decode": "^2.2.0",
     "apollo-boost": "^0.4.9",
-    "apollo-server-express": "^3.10.1"
+    "apollo-server-express": "^3.10.1",
+    "@emotion/react": "^11.10.0",
+    "@emotion/style": "^0.8.0",
+    "@emotion/styled": "^11.10.0",
+    "antd": "^4.22.4",
+    "notistack": "^2.0.5",
+    "react-stripe-checkout": "^2.6.3"
   },
   "scripts": {
     "start": "react-scripts start",
