@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import image from "../../assets/images/Sphere.png";
 
 const HeroSection = () => {
@@ -10,9 +11,9 @@ const HeroSection = () => {
         </h1>
         <h1 className="text-5xl text-darkGrey mt-3">Sorcerer's Sphere</h1>
       </div>
-      <div className="lg:w-4/12">
+      <Link to="/sorcerers-sphere" className="lg:w-4/12">
         <img src={image} alt="" className="w-full m-0" />
-      </div>
+      </Link>
       <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
