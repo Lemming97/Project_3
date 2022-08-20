@@ -1,6 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //set apollo.router and client
 import {
@@ -13,9 +11,16 @@ import {
 import { setContext } from "@apollo/client/link/context";
 
 //pages
-import Navbar from "./components/Navbar/Navbar";
+import { Routes, Route } from "react-router-dom";
+
 import LandingPage from "./pages/LandingPage";
-import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import SigninAndSignupPage from "./pages/SigninAndSignupPage";
+import MagicMarkPage from "./pages/MagicMarkPage";
+import LightWorkerPage from "./pages/LightWorkerPage";
+import CashMoneyPage from "./pages/CashMoneyPage";
+import SorcerersSpherePage from "./pages/SorcerersSpherePage";
 
 //import authorization
 import auth from "./utils/auth";
@@ -54,32 +59,18 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    //using swith chase which seems to be breaking at the moment
-    <ApolloProvider client={client}>
-      <Router>
-        <>
-          <Navbar />
-          <Switch>
-            <Route exact path="/" component={LandingPage} />
-            {/* <Route exact path="/saved" component={SavedBooks} /> */}
-            <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
-          </Switch>
-        </>
-      </Router>
-    </ApolloProvider>
-    // return <LandingPage />;
-
-    // <ApolloProvider client={client}>
-    //   <Router>
-    //     <Routes>
-    //       <Route path="/" element={<LandingPage />} />
-    //       {/* <Route path="/login" element={<Login />} />
-
-    //     <Route path="*" element={<NoMatch />} /> */}
-    //     </Routes>
-    //   </Router>
-    // </ApolloProvider>
-    // return <LandingPage />
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/signin-signup" element={<SigninAndSignupPage />} />
+        <Route path="/magic-mark" element={<MagicMarkPage />} />
+        <Route path="/light-worker" element={<LightWorkerPage />} />
+        <Route path="/cash-money" element={<CashMoneyPage />} />
+        <Route path="/sorcerers-sphere" element={<SorcerersSpherePage />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
