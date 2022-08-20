@@ -28,7 +28,8 @@
     "express": "^4.17.1",
     "graphql": "^15.8.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.10"
+    "mongoose": "^5.9.10",
+    "@emotion/react": "^11.10.0"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
