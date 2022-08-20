@@ -1,5 +1,4 @@
 import React from "react";
-
 //set apollo.router and client
 import {
   ApolloClient,
@@ -9,7 +8,6 @@ import {
 } from "@apollo/client";
 
 import { setContext } from "@apollo/client/link/context";
-
 //pages
 import { Routes, Route } from "react-router-dom";
 
