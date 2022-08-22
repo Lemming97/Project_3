@@ -1,49 +1,73 @@
-import React, { useState } from "react";
-import Header from "../src/components/Header";
-import Landing from "../src/components/Landing";
-// import LightWorker from "./pages/LightWorker";
-// import MagicMark from "../src/pages/MagicMark.js";
-// import Login from "../src/pages/Login.js";
-// import CashMoney from "../src/pages/CashMoney.js";
-import Footer from "../src/components/Footer";
+import React from "react";
+//set apollo.router and client
+import {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+  createHttpLink,
+} from "@apollo/client";
 
-import "./App.css";
+import { setContext } from "@apollo/client/link/context";
+//pages
+import { Routes, Route } from "react-router-dom";
+
+import LandingPage from "./pages/LandingPage";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import SigninAndSignupPage from "./pages/SigninAndSignupPage";
+import MagicMarkPage from "./pages/MagicMarkPage";
+import LightWorkerPage from "./pages/LightWorkerPage";
+import CashMoneyPage from "./pages/CashMoneyPage";
+import SorcerersSpherePage from "./pages/SorcerersSpherePage";
+
+//import authorization
+import auth from "./utils/auth";
+
+const httpLink = createHttpLink({
+  uri: "/graphql",
+});
+
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = auth.getToken();
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
+
+//establish apollo client
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+
+  request: (operation) => {
+    const token = localStorage.getItem("id_token");
+
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : "",
+      },
+    });
+  },
+  cache: new InMemoryCache(),
+});
 
 function App() {
-  const [currentTab, handleTabChange] = useState("landing");
-
-  // This method is checking to see what the value of `currentTab` is. Depending on the value of currentPage, we return the corresponding component to render.
-  const renderTab = () => {
-    if (currentTab === "Sorcerer-Sphere") {
-      return <Landing />;
-    }
-    // if (currentTab === " Magic Mark") {
-    //   return <MagicMark />;
-    // }
-    // if (currentTab === "Light Worker") {
-    //   return <LightWorker />;
-    // }
-    // if (currentTab === "Login") {
-    //   return <Login />;
-    // }
-    // if (currentTab === "Cash Money") {
-    //   return <CashMoney />;
-    // }
-    return <Landing />;
-  };
-
   return (
     <>
-      <Header
-        currentTab={currentTab}
-        handleTabChange={handleTabChange}
-      ></Header>
-      <main>
-        Test
-        {renderTab()}
-        Test test test
-      </main>
-      <Footer></Footer>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/signin-signup" element={<SigninAndSignupPage />} />
+        <Route path="/magic-mark" element={<MagicMarkPage />} />
+        <Route path="/light-worker" element={<LightWorkerPage />} />
+        <Route path="/cash-money" element={<CashMoneyPage />} />
+        <Route path="/sorcerers-sphere" element={<SorcerersSpherePage />} />
+      </Routes>
+      <Footer />
     </>
   );
 }

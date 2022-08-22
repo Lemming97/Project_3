@@ -14,6 +14,7 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
+
     getAllUsers: async () => {
       const userData = await User.find({})
         .select('-__v -password');
@@ -24,20 +25,14 @@ const resolvers = {
       if (context.user) {
         const data = await Sphericle.findOne({ _id: _id })
           .select('-__v');
-      }
 
-      throw new AuthenticationError("Not logged in");
-    },
-    getBycategory: async (parent, { category }, context) => {
+    getByCategory: async (parent, { category }, context) => {
       if (context.user) {
         const categoryData = await Sphericle.find({ category: category })
           .select('-__v');
 
         return categoryData;
-      }
 
-      throw new AuthenticationError("Not logged in");
-    }
   },
 
   Mutation: {
