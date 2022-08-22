@@ -15,7 +15,7 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     getAllUsers: async () => {
-      const userData = await User.findAll({})
+      const userData = await User.find({})
         .select('-__v -password');
 
       return userData;
@@ -30,7 +30,7 @@ const resolvers = {
     },
     getByFacet: async (parent, { facet }, context) => {
       if (context.user) {
-        const facetData = await Sphericle.findAll({ facet: facet })
+        const facetData = await Sphericle.find({ facet: facet })
           .select('-__v');
 
         return facetData;
@@ -70,24 +70,21 @@ const resolvers = {
           // this may not be the way to augment. Create separate function const?
           { voteCount: voteCount++ },
           { new: true }
-          )
-
+        )
         return updatedSphericle;
       }
 
       throw new AuthenticationError("Not logged in")
     },
-    downvote: async (parent, { _id }, context) => {
+    downvote: async (parent, { _id, voteCount }, context) => {
       if (context.user) {
         const updatedSphericle = await Sphericle.findOneandUpdate(
           { _id: _id }, 
           { voteCount: voteCount-- },
           { new: true }
-          )
-
+        )
         return updatedSphericle;
       }
-
       throw new AuthenticationError("Not logged in")
     }
   },
