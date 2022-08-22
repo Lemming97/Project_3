@@ -10,6 +10,7 @@ import {
 import { setContext } from "@apollo/client/link/context";
 //pages
 import { Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import LandingPage from "./pages/LandingPage";
 import Navbar from "./components/Navbar/Navbar";
