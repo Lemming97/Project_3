@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/Sphere favicon .png";
 import StripeCheckout from "react-stripe-checkout";
 import { useSnackbar } from "notistack";
 
+import Auth from "../../utils/auth";
+
 const Navbar = () => {
+  const { loggedIn, logout } = Auth;
   const [showMobileNav, setShowMobileNav] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState();
 
   const { enqueueSnackbar } = useSnackbar();
   const paymentSubmit = () => {
@@ -16,7 +20,11 @@ const Navbar = () => {
     setShowMobileNav((prevValue) => !prevValue);
   };
 
-  
+  useEffect(() => {
+    const resposne = loggedIn();
+    setIsLoggedIn(resposne);
+  }, [isLoggedIn, loggedIn]);
+
   return (
     <div className="flex justify-between items-center py-3 px-4 sm:px-14">
       <Link to="/">
@@ -68,12 +76,19 @@ const Navbar = () => {
           >
             <div>Donate 1$</div>
           </StripeCheckout>
-          <Link to="/signin-signup" className="text-red tracking-wider">
-            Login/Signup
-          </Link>
-          <Link to="/" className="text-red tracking-wider">
-            Logout
-          </Link>
+          {!isLoggedIn && (
+            <Link to="/signin-signup" className="text-red tracking-wider">
+              Login/Signup
+            </Link>
+          )}
+          {isLoggedIn && (
+            <button
+              onClick={logout}
+              className="text-red tracking-wider text-left"
+            >
+              Logout
+            </button>
+          )}
         </div>
       )}
       <button className="block lg:hidden" onClick={mobileNavHandler}>
@@ -110,14 +125,22 @@ const Navbar = () => {
         >
           <div>Donate 1$</div>
         </StripeCheckout>
-        <div className="h-6 w-[1px] bg-dark"></div>
-        <Link to="/signin-signup" className="text-red">
-          Login/Signup
-        </Link>
-        <div className="h-6 w-[1px] bg-dark"></div>
-        <Link to="/" className="text-red">
-          Logout
-        </Link>
+        {!isLoggedIn && (
+          <>
+            <div className="h-6 w-[1px] bg-dark"></div>
+            <Link to="/signin-signup" className="text-red">
+              Login/Signup
+            </Link>
+          </>
+        )}
+        {isLoggedIn && (
+          <>
+            <div className="h-6 w-[1px] bg-dark"></div>
+            <button onClick={logout} className="text-red">
+              Logout
+            </button>
+          </>
+        )}
       </div>
     </div>
   );
