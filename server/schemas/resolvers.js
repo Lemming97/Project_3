@@ -28,12 +28,12 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    getByFacet: async (parent, { facet }, context) => {
+    getBycategory: async (parent, { category }, context) => {
       if (context.user) {
-        const facetData = await Sphericle.find({ facet: facet })
+        const categoryData = await Sphericle.find({ category: category })
           .select('-__v');
 
-        return facetData;
+        return categoryData;
       }
 
       throw new AuthenticationError("Not logged in");
