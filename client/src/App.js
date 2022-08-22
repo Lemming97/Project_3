@@ -1,4 +1,8 @@
 import React from "react";
+
+import { Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 //set apollo.router and client
 import {
   ApolloClient,
@@ -8,10 +12,8 @@ import {
 } from "@apollo/client";
 
 import { setContext } from "@apollo/client/link/context";
-//pages
-import { Routes, Route } from "react-router-dom";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+//pages
 import LandingPage from "./pages/LandingPage";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
