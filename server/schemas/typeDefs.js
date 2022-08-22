@@ -3,23 +3,11 @@ const { gql } = require("apollo-server-express");
 const typeDefs = gql`
   type Query {
     me: User
+    getAllUsers: [User]
+    getSingleSphericle: Sphericle
+    getByFacet: [Sphericle]
   }
-  type Sphere1 {
-    _id: ID
-    text: String
-    voteCount: Int
-  }
-  type Sphere2 {
-    _id: ID
-    text: String
-    voteCount: Int
-  }
-  type Sphere3 {
-    _id: ID
-    text: String
-    voteCount: Int
-  }
-  type Sphere4 {
+  type Sphericle {
     _id: ID
     text: String
     voteCount: Int
@@ -27,7 +15,7 @@ const typeDefs = gql`
   type User {
     _id: ID
     username: String
-    email: String
+    email: String 
   }
   type Auth {
     token: ID!
@@ -36,7 +24,8 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-  
+    upvote(_id:ID!): Sphericle
+    downvote(_id:ID!): Sphericle
   }
 `;
 
