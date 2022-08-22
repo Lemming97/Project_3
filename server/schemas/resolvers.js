@@ -1,59 +1,42 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Sphere1, Sphere2, Sphere3, Sphere4 } = require("../models");
+// const { User, SorcerersSphere, MagicMark, LightWorker, Sphericle } = require("../models");
+const { User, Sphericle } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({ _id: context.user._id })
-          .select("-__v -password");
+        const userData = await User.findOne({ _id: context.user._id }).select(
+          "-__v -password"
+        );
 
         return userData;
       }
 
       throw new AuthenticationError("Not logged in");
     },
-    getSphere1: async (parent, { _id }, context) => {
-      if (context.user) {
-        const sphereData = await Sphere1.findOne({ _id: _id })
-          .select("-__v");
+    getAllUsers: async () => {
+      const userData = await User.find({}).select("-__v -password");
 
-        return sphereData;
+      return userData;
+    },
+    getSingleSphericle: async (parent, { _id }, context) => {
+      if (context.user) {
+        const data = await Sphericle.findOne({ _id: _id }).select("-__v");
       }
 
       throw new AuthenticationError("Not logged in");
     },
-    getSphere2: async (parent, { _id }, context) => {
+    getByFacet: async (parent, { facet }, context) => {
       if (context.user) {
-        const sphereData = await Sphere2.findOne({ _id: _id })
-          .select("-__v");
+        const facetData = await Sphericle.find({ facet: facet }).select("-__v");
 
-        return sphereData;
+        return facetData;
       }
 
       throw new AuthenticationError("Not logged in");
     },
-    getSphere3: async (parent, { _id }, context) => {
-      if (context.user) {
-        const sphereData = await Sphere3.findOne({ _id: _id })
-          .select("-__v");
-
-        return sphereData;
-      }
-
-      throw new AuthenticationError("Not logged in");
-    },
-    getSphere4: async (parent, { _id }, context) => {
-      if (context.user) {
-        const sphereData = await Sphere4.findOne({ _id: _id })
-          .select("-__v");
-
-        return sphereData;
-      }
-
-      throw new AuthenticationError("Not logged in");
-    }
   },
 
   Mutation: {
@@ -78,6 +61,30 @@ const resolvers = {
 
       const token = signToken(user);
       return { token, user };
+    },
+    upvote: async (parent, { _id, voteCount }, context) => {
+      if (context.user) {
+        const updatedSphericle = await Sphericle.findOneandUpdate(
+          { _id: _id },
+          // this may not be the way to augment. Create separate function const?
+          { voteCount: voteCount++ },
+          { new: true }
+        );
+        return updatedSphericle;
+      }
+
+      throw new AuthenticationError("Not logged in");
+    },
+    downvote: async (parent, { _id, voteCount }, context) => {
+      if (context.user) {
+        const updatedSphericle = await Sphericle.findOneandUpdate(
+          { _id: _id },
+          { voteCount: voteCount-- },
+          { new: true }
+        );
+        return updatedSphericle;
+      }
+      throw new AuthenticationError("Not logged in");
     },
   },
 };
