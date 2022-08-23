@@ -1,4 +1,26 @@
 const express = require("express");
+const mongoose = require("mongoose");
+const app = express();
+const { graphqlHTTP } = require("express-graphql");
+const { buildSchema } = require("graphql");
+
+mongoose
+  .connect(
+    "mongodb+srv://anon:linky@cluster0.psuk6jr.mongodb.net/?retryWrites=true&w=majority"
+  )
+  .then(() => console.log("Mongo connected successfully"))
+  .catch((err) => console.log("Error", err));
+
+const schema = buildSchema(`
+    type Query {
+    name: String
+  }
+  `);
+const rootValue = {
+  name: () => {
+    return "";
+  },
+};
 // import ApolloServer
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
@@ -16,8 +38,6 @@ const server = new ApolloServer({
   resolvers,
   context: authMiddleware,
 });
-
-const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -54,3 +74,20 @@ const startApolloServer = async (typeDefs, resolvers) => {
 
 // Call the async function to start the server
 startApolloServer(typeDefs, resolvers);
+
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    schema,
+    graphiql: true,
+    rootValue,
+  })
+);
+
+app.get("/", (req, res) => {
+  res.send("Hello from the backend app.js");
+});
+
+app.listen(4000, () => {
+  console.log("Server on port 4000  ");
+});
