@@ -4,8 +4,8 @@ import wandImg from "../assets/images/magic wand.png";
 import like from "../assets/images/like.png";
 import dislike from "../assets/images/dislike.png";
 import circle from "../assets/images/circle.png";
+import cashmoneyrando from "../utils/cashmoneyrando.js";
 
-const DUMMY_TEXT = `"12, 17, 68, 24, 37, 2"`;
 
 const CashMoneyPage = () => {
   const [showResponse, setShowResponse] = useState(false);
@@ -44,7 +44,7 @@ const CashMoneyPage = () => {
           <div style={{ flex: 2 }} className="mt-16">
             <div className="bg-darkGrey text-white text-center py-10 px-10 relative">
               <p className="text-2xl tracking-wider leading-loose">
-                {DUMMY_TEXT}
+                {cashmoneyrando}
               </p>
               <button className="absolute right-6 bottom-6">
                 <svg
