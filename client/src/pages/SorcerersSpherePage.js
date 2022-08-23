@@ -7,6 +7,12 @@ import circle from "../assets/images/circle.png";
 import ShareModal from "../components/Modal/Modal.js";
 import { BsFillShareFill } from "react-icons/bs";
 
+// import graphQL
+import graphql from "graphql";
+// import the needed queries
+import { GET_ONE_ANSWER } from "../utils/queries";
+
+
 const DUMMY_TEXT = `“Every saint has a past, and every
 sinner has a future.”`;
 
@@ -59,6 +65,8 @@ const SorcerersSpherePage = () => {
             <div className="bg-darkGrey text-white text-center py-10 px-10 relative">
               <p className="text-2xl tracking-wider leading-loose">
                 {DUMMY_TEXT}
+                {/* TODO: use get_one_answer from the sorcerer's sphere category*/}
+                
               </p>
 
               <button

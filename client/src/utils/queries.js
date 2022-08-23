@@ -22,10 +22,9 @@ query {
 
 const GET_ONE_ANSWER = gql`
   query {
-    getSingleSphericle($_id: ID!) {
-      getSingleSphericle(_id: $id) {
+    getSingleSphericle($_id: ID!, $category: String!) {
+      getSingleSphericle(_id: $id, category: $category) {
         text
-        category
         voteCount
       }
     }
