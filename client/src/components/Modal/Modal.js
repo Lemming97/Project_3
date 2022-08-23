@@ -1,4 +1,7 @@
 import React from "react";
+import { FaFacebook } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 function ShareModal({ setOpenModal }) {
   return (
@@ -26,25 +29,34 @@ function ShareModal({ setOpenModal }) {
                 </svg>
               </div>
               <div className="mt-2 text-center sm:ml-4 sm:text-left">
-                <h4 className="text-lg font-medium text-gray-800">
-                  Delete account ?
-                </h4>
+                <h4 className="text-lg font-medium text-gray-800">Add Us!</h4>
+
                 <p className="mt-2 text-[15px] leading-relaxed text-gray-500">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  <ul>
+                    <li className="modal-logo">
+                      <FaFacebook />
+                    </li>
+
+                    <li className="modal-logo">
+                      <FaGithub />
+                    </li>
+                    <li className="modal-logo">
+                      <FaInstagram />
+                    </li>
+                  </ul>
                 </p>
                 <div className="items-center gap-2 mt-3 sm:flex">
-                  <button
+                  {/* <button
                     className="w-full mt-2 p-2.5 flex-1 text-white bg-red-600 rounded-md outline-none ring-offset-2 ring-red-600 focus:ring-2"
                     onClick={() => setOpenModal(false)}
                   >
-                    Delete
-                  </button>
+                    test
+                  </button> */}
                   <button
                     className="w-full mt-2 p-2.5 flex-1 text-gray-800 rounded-md outline-none border ring-offset-2 ring-indigo-600 focus:ring-2"
                     onClick={() => setOpenModal(false)}
                   >
-                    Cancel
+                    Close
                   </button>
                 </div>
               </div>

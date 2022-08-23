@@ -71,3 +71,15 @@ nav a:hover {
   opacity: 0.5;
   transition: .5s ease;
 }
+
+.modal-logo {
+  cursor: pointer;
+  list-style: none;
+  font-size: 40px;
+  color: #85A2A6;
+  display: inline-block;
+  margin: 15px;
+  justify-content: space-between;
+
+
+}
