@@ -4,7 +4,7 @@ function cashmoney() {
     var add = true;
     var randomNumber = Math.floor(Math.random() * 49) + 1;
     for (var y = 0; y < 49; y++) {
-      if (numbers[y] == randomNumber) {
+      if (numbers[y] === randomNumber) {
         add = false;
       }
     }
