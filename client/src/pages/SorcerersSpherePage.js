@@ -19,7 +19,7 @@ const SorcerersSpherePage = () => {
         <div className="flex-1">
           <h1 className="text-5xl tracking-widest">Sorcerer's Sphere</h1>
           <p className="text-xl tracking-widest leading-loose mt-4">
-            Ask and you shall recieve. There is no fear in the sphere. We are
+            Ask and you shall receive. There is no fear in the sphere. We are
             One.
           </p>
         </div>
