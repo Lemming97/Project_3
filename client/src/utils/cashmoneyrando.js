@@ -14,7 +14,6 @@ function cashmoney() {
       i--;
     }
   }
-
   var highestNumber = 49;
   for (var m = 0; m < numbers.length; m++) {
     for (var n = m + 1; n < numbers.length; n++) {
@@ -25,6 +24,6 @@ function cashmoney() {
       }
     }
   }
-
-  document.getElementById("numbers").innerHTML = numbers.join(" - ");
+  return numbers.join(" - ");
 }
+export default cashmoney;
