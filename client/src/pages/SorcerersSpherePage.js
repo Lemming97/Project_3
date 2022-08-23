@@ -4,12 +4,15 @@ import wandImg from "../assets/images/magic wand.png";
 import like from "../assets/images/like.png";
 import dislike from "../assets/images/dislike.png";
 import circle from "../assets/images/circle.png";
+import ShareModal from "../components/Modal/Modal.js";
 
 const DUMMY_TEXT = `“Every saint has a past, and every
 sinner has a future.”`;
 
 const SorcerersSpherePage = () => {
   const [showResponse, setShowResponse] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="px-4 sm:px-20">
       <div className="flex flex-col-reverse lg:flex-row text-center lg:text-left justify-between items-center gap-6">
@@ -57,7 +60,7 @@ const SorcerersSpherePage = () => {
                 {DUMMY_TEXT}
               </p>
               <button className="absolute right-6 bottom-6">
-                <svg
+                {/* <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
                   height="40"
@@ -66,7 +69,23 @@ const SorcerersSpherePage = () => {
                   viewBox="0 0 16 16"
                 >
                   <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z" />
-                </svg>
+                </svg> */}
+                <div className="flex flex-col items-center justify-center h-60">
+                  <h1 className="text-2xl font-bold">
+                    Click on the button to open the modal.
+                  </h1>
+                  <button
+                    className="px-4 py-2 text-purple-100 bg-purple-600 rounded-md"
+                    type="button"
+                    onClick={() => {
+                      setShowModal(true);
+                    }}
+                  >
+                    Open Modal
+                  </button>
+
+                  {showModal && <ShareModal setOpenModal={setShowModal} />}
+                </div>
               </button>
             </div>
             <div className="flex flex-col md:flex-row items-center gap-6 mt-4">
