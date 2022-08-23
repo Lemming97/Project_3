@@ -1,12 +1,24 @@
 import DetailsSection from "../components/DetailsSection/DetailsSection";
 import HeroSection from "../components/HeroSection/HeroSection";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import image from "../assets/images/hands.png";
-import { useHref } from "react-router-dom";
 
 const LandingPage = () => {
-  const [shouldShowModal, setShouldShowModal] = useState(true);
+  const [shouldShowModal, setShouldShowModal] = useState(false);
+  console.log("shoudlShowModal", shouldShowModal);
+
+  useEffect(() => {
+    console.log(window.localStorage.getItem("modal"));
+    if ("modal" in localStorage) {
+      console.log("if statement");
+      return;
+    } else {
+      console.log("else statement");
+      window.localStorage.setItem("modal", true);
+      setShouldShowModal(true);
+    }
+  }, []);
 
   const onYesClick = () => {
     setShouldShowModal(false);
@@ -14,7 +26,6 @@ const LandingPage = () => {
 
   const onNoClick = () => {
     window.location.href = "https://www.chuckecheese.com/";
-    setShouldShowModal(false);
   };
 
   return (
