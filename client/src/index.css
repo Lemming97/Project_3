@@ -49,3 +49,7 @@ nav a:hover {
   -ms-transition: all 1s ease;
   transition: all 1s ease;
 }
+
+.landing-page {
+  margin-top: 5%;
+}

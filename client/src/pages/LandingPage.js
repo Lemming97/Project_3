@@ -7,7 +7,7 @@ import image from "../assets/images/hands.png";
 const LandingPage = () => {
   return (
     <>
-      <div className="px-4 sm:px-14">
+      <div className="px-4 sm:px-14 landing-page">
         <HeroSection />
       </div>
       <DetailsSection />
