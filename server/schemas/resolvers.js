@@ -1,5 +1,4 @@
 const { AuthenticationError } = require("apollo-server-express");
-// const { User, SorcerersSphere, MagicMark, LightWorker, Sphericle } = require("../models");
 const { User, Sphericle } = require("../models");
 const { signToken } = require("../utils/auth");
 
@@ -28,11 +27,11 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    getByFacet: async (parent, { facet }, context) => {
+    getByCategory: async (parent, { category }, context) => {
       if (context.user) {
-        const facetData = await Sphericle.find({ facet: facet }).select("-__v");
+        const categoryData = await Sphericle.find({ category: category }).select("-__v");
 
-        return facetData;
+        return categoryData;
       }
 
       throw new AuthenticationError("Not logged in");

@@ -7,7 +7,7 @@ const sphericleSchema = new Schema(
             required: true,
             trim: true        
         },
-        facet: {
+        category: {
             type: String,
             required: true
         },
