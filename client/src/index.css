@@ -53,3 +53,33 @@ nav a:hover {
 .landing-page {
   margin-top: 5%;
 }
+
+
+.share-button {
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+  list-style: none;
+  font-size: 40px;
+  color: #F2F2F2;
+  display: inline-block;
+  padding: 15px;
+}
+
+.share-button:hover {
+  color: #F25252;
+  opacity: 0.5;
+  transition: .5s ease;
+}
+
+.modal-logo {
+  cursor: pointer;
+  list-style: none;
+  font-size: 40px;
+  color: #85A2A6;
+  display: inline-block;
+  margin: 15px;
+  justify-content: space-between;
+
+
+}
