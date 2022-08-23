@@ -53,3 +53,18 @@ nav a:hover {
 .landing-page {
   margin-top: 5%;
 }
+
+
+.share-button {
+  cursor: pointer;
+  list-style: none;
+  font-size: 40px;
+  color: #F2F2F2;
+  display: inline-block;
+}
+
+.share-button:hover {
+  color: #F25252;
+  opacity: 0.5;
+  transition: .5s ease;
+}

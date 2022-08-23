@@ -73,7 +73,7 @@ const SorcerersSpherePage = () => {
                 </svg>
               </button> */}
               <button
-                className="px-4 py-2 absolute right-6 bottom-6"
+                className="px-4 py-2 absolute right-6 bottom-6 share-button"
                 type="button"
                 onClick={() => {
                   setShowModal(true);
