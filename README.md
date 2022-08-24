@@ -6,6 +6,9 @@ Project_3
 
 Being a web developer means being part of a community. We all need a place to share our projects not only if we're applying for jobs or working as a freelancer but also so that we can share our work with fellow developers and collaborate on future projects. 
 
+The Sphere is waiting for you...
+Ask and you shall receive...The Sphere provides answers to your burning questions, Light Worker affirmations, Magic Mark's advice and even lucky numbers! You will want to bookmark this one and keep the answers coming to your deepest questions with just a simple click!
+
 
 ## Table of Contents
 * [License](#license)
@@ -68,7 +71,6 @@ Have a high-quality README (with unique name, description, technologies used, sc
 
 To allow the user to ask questions, login, and collect affirmations about themselves. 
 
-## Built With
 
 
 
