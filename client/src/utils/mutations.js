@@ -27,3 +27,30 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const UPVOTE = gql`
+  mutation upvote($username: String! $_id: ID!) {
+    upvote(username: $username, _id: $_id) {
+      token
+      sphericle {
+        _id
+        text
+        voteCount
+      }
+    }
+  }
+`;
+
+export const DOWNVOTE = gql`
+  mutation downvote($username: String! $_id: ID!) {
+    downvote(username: $username, _id: $_id) {
+      token
+      sphericle {
+        _id
+        text
+        voteCount
+      }
+    }
+  }
+`;
+

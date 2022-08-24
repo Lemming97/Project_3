@@ -57,7 +57,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <>
+    <ApolloProvider client={client}>
       <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
@@ -68,7 +68,7 @@ function App() {
         <Route path="/sorcerers-sphere" element={<SorcerersSpherePage />} />
       </Routes>
       <Footer />
-    </>
+    </ApolloProvider>
   );
 }
 

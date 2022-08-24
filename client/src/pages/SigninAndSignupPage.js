@@ -1,5 +1,6 @@
 import React from "react";
-import Form from "../components/Form/Form";
+import LoginForm from "../components/LoginForm/LoginForm";
+import SignupForm from "../components/SignupForm/SignupForm";
 
 const SigninAndSignupPage = () => {
   return (
@@ -11,7 +12,10 @@ const SigninAndSignupPage = () => {
       </div>
 
       <div className="my-14">
-        <Form />
+        <div className="bg-lightGrey border-[3px] border-dark px-10 py-16 text-center">
+          <LoginForm />
+          <SignupForm />
+        </div>
       </div>
     </div>
   );

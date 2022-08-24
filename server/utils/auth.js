@@ -5,25 +5,23 @@ const secret = "notsosecret";
 const expiration = "2h";
 
 module.exports = {
-  // function for our authenticated routes
   authMiddleware: function ({ req }) {
-    // allows token to be sent via  req.query or headers
     let token = req.body.token || req.query.token || req.headers.authorization;
-
-    // ["Bearer", "<tokenvalue>"]
+    // console.log(req.headers.authorization);
     if (req.headers.authorization) {
       token = token.split(" ").pop().trim();
     }
-
+    // console.log(token);
     if (!token) {
       return req;
     }
 
     // verify token and get user data out of it
     try {
-      const { data } = jwt.verify(token, secret, { maxAge: expiration });
+      const { data } = jwt.verify(token, secret, { maxAge: expiration }); // this is failing to validate the token
       req.user = data;
-    } catch {
+    } catch (err) {
+      // console.log({ err });
       console.log("Invalid token");
     }
 
