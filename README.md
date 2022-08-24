@@ -38,6 +38,8 @@ I would like a site where I can use a generic icosahedron for guidance.
 I would like positive affirmations for the days I feel less that 100%
 I would like to be insulted to keep my ego in check
 I need to be able to vote  and see what other people have voted in order to guide my confirmation bias
+I would also like to be able to donate money to validation affirmations
+
 ```
 
 
@@ -72,7 +74,7 @@ Have a high-quality README (with unique name, description, technologies used, sc
 
 ## Link 
 
-<a href="https://intense-island-60886.herokuapp.com/">Click Here</a>
+<a href="https://sorcerers-sphere.herokuapp.com/">Click Here</a>
 
 ## Usage 
 
