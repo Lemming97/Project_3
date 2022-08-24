@@ -11,9 +11,7 @@ const Footer = () => {
           <img src={logo} alt="" className="w-full" />
         </div>
         <div className="text-center mt-8">
-          <p className="text-lg tracking-widest">
-            For Entertainment Purposes Only.
-            <br />
+          <p className="text-lg tracking-widest">For Entertainment Purposes Only.<br/>
             &copy; 2022 The Sphere. All Rights Reserved.
           </p>
         </div>
@@ -39,3 +37,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
