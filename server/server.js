@@ -1,26 +1,26 @@
 const express = require("express");
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const app = express();
 const { graphqlHTTP } = require("express-graphql");
 const { buildSchema } = require("graphql");
 
-mongoose
-  .connect(
-    "mongodb+srv://anon:linky@cluster0.psuk6jr.mongodb.net/?retryWrites=true&w=majority"
-  )
-  .then(() => console.log("Mongo connected successfully"))
-  .catch((err) => console.log("Error", err));
+// mongoose
+//   .connect(
+//     "mongodb+srv://anon:linky@cluster0.psuk6jr.mongodb.net/?retryWrites=true&w=majority"
+//   )
+//   .then(() => console.log("Mongo connected successfully"))
+//   .catch((err) => console.log("Error", err));
 
-const schema = buildSchema(`
-    type Query {
-    name: String
-  }
-  `);
-const rootValue = {
-  name: () => {
-    return "";
-  },
-};
+// const schema = buildSchema(`
+//     type Query {
+//     name: String
+//   }
+//   `);
+// const rootValue = {
+//   name: () => {
+//     return "";
+//   },
+// };
 // import ApolloServer
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
@@ -45,7 +45,7 @@ app.use(express.json());
 // if we're in production, serve client/build as static assets
 // Serve up static assets
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../client/build")));
+  app.use(express.static(path.join(__dirname, "../client/build/static")));
 }
 // have to comment this code out to get the playground to load
 //add the build line in again
@@ -74,19 +74,19 @@ const startApolloServer = async (typeDefs, resolvers) => {
 // Call the async function to start the server
 startApolloServer(typeDefs, resolvers);
 
-app.use(
-  "/graphql",
-  graphqlHTTP({
-    schema,
-    graphiql: true,
-    rootValue,
-  })
-);
+// app.use(
+//   "/graphql",
+//   graphqlHTTP({
+//     schema,
+//     graphiql: true,
+//     rootValue,
+//   })
+// );
 
-app.get("/", (req, res) => {
-  res.send("Hello from the backend app.js");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello from the backend app.js");
+// });
 
-app.listen(4000, () => {
-  console.log("Server on port 4000  ");
-});
+// app.listen(4000, () => {
+//   console.log("Server on port 4000  ");
+// });
