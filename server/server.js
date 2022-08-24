@@ -1,8 +1,8 @@
 const express = require("express");
 // const mongoose = require("mongoose");
 const app = express();
-const { graphqlHTTP } = require("express-graphql");
-const { buildSchema } = require("graphql");
+// const { graphqlHTTP } = require("express-graphql");
+// const { buildSchema } = require("graphql");
 
 // mongoose
 //   .connect(
