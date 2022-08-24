@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Auth from "../../utils/auth";
-
+// import {graphql} from "react-apollo";
 // importing mutations
 import { useMutation } from "@apollo/react-hooks";
 import { LOGIN_USER } from "../../utils/mutations";
@@ -86,4 +86,7 @@ const LoginForm = () => {
   );
 };
 
+// export default LoginForm;
 export default LoginForm;
+// (graphql(loginUser, {name: "addUserName"}),
+//                           graphql(allUser, {name: "allUserName"}))(loginUser)
