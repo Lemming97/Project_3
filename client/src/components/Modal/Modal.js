@@ -1,6 +1,6 @@
 import React from "react";
 import { FaFacebook } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 
 function ShareModal({ setOpenModal }) {
@@ -30,7 +30,7 @@ function ShareModal({ setOpenModal }) {
               </div> */}
               <div className="mt-2 text-center sm:ml-4 sm:text-left flex flex-col items-center">
                 <h4 className="text-lg font-medium text-gray-800 m-auto">
-                  Add Us!
+                  Share The Sphere!
                 </h4>
 
                 <p className="mt-2 text-[15px] leading-relaxed text-gray-500">
@@ -40,7 +40,7 @@ function ShareModal({ setOpenModal }) {
                     </li>
 
                     <li className="modal-logo">
-                      <FaGithub />
+                      <FaTwitter />
                     </li>
                     <li className="modal-logo">
                       <FaInstagram />
