@@ -11,8 +11,8 @@ const Footer = () => {
           <img src={logo} alt="" className="w-full" />
         </div>
         <div className="text-center mt-8">
-          <p className="text-lg tracking-widest">
-            &copy; 2022 SORCERER'S SPHERE. ALL RIGHTS RESERVED.
+          <p className="text-lg tracking-widest">For Entertainment Purposes Only.<br/>
+            &copy; 2022 The Sphere. All Rights Reserved.
           </p>
         </div>
         <div className="flex md:hidden">
