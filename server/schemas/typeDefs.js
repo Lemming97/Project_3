@@ -1,6 +1,7 @@
-const { gql } = require("apollo-server-express");
+// const { gql } = require("apollo-server-express");
+const { gql } = require("graphql");
 
-const typeDefs = gql`
+const typeDefs = gql(`
   type Query {
     me: User
     getAllUsers: [User]
@@ -27,6 +28,6 @@ const typeDefs = gql`
     upvote(_id: ID!): Sphericle
     downvote(_id: ID!): Sphericle
   }
-`;
+`);
 
 module.exports = typeDefs;
