@@ -30,11 +30,13 @@ This project is license under MIT ![Github licence](http://img.shields.io/badge/
 ## User Story
 
 ```md
+
 As a User I am fiercely dedicated to external affirmations and am terribly indecisive which also makes me a failure of a compulsive gambler.
 I would like a site where I can use a generic icosahedron for guidance in my decisions.
 I would like positive affirmations for the days I feel less that 100%
 I would like to be insulted to keep my ego in check.
 I need to be able to vote and see what other people have voted in order to guide my confirmation bias.
+
 ```
 
 
@@ -60,15 +62,20 @@ Have a high-quality README (with unique name, description, technologies used, sc
 
 
 
-
-
-
 ## Link 
-<a href="https://TBD">Click Here</a>
+
+<a href="https://intense-island-60886.herokuapp.com/">Click Here</a>
 
 ## Usage 
 
+To allow the user to ask questions, login, and collect affirmations about themselves. 
+
 ## Built With
+
+
+
+
+
 
 
 
