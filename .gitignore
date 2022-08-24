@@ -1,6 +1,6 @@
 .DS_Store
-/build
 /node_modules
+/build
 
 
 # Logs
