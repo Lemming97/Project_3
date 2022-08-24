@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {graphql} from "react-apollo";
+// import {graphql} from "react-apollo";
 // import { createUser } from "../utils/API";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../../utils/mutations";
@@ -112,8 +112,8 @@ const SignupForm = () => {
   );
 };
 
-// export default SignupForm;
-export default LoginForm(
-  graphql(addUser, { name: "addUserName" }),
-  graphql(allUser, { name: "allUserName" })
-)(addUser);
+export default SignupForm;
+// export default LoginForm(
+//   graphql(addUser, { name: "addUserName" }),
+//   graphql(allUser, { name: "allUserName" })
+// )(addUser);
