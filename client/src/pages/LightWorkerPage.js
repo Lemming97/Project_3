@@ -6,14 +6,26 @@ import dislike from "../assets/images/dislike.png";
 import circle from "../assets/images/circle.png";
 import ShareModal from "../components/Modal/Modal.js";
 import { BsFillShareFill } from "react-icons/bs";
+import { useQuery } from '@apollo/client';
+import { GET_ONE_ANSWER } from '../utils/queries';
 
-const DUMMY_TEXT = `"Your Divine Life Purpose involves the giving
-of service through your natural talents,
-passions, and interests."`;
+// const DUMMY_TEXT = `"Your Divine Life Purpose involves the giving
+// of service through your natural talents,
+// passions, and interests."`;
 
 const LightWorkerPage = () => {
+  // hardcoded to show demo answer
+  const category = "LightWorker";
+  const _id = "62fdaa8cd2cbf8450e9c9bf0";
+
+  const { loading, data } = useQuery(GET_ONE_ANSWER, {
+    variables: { _id, category }
+  });
+  
   const [showResponse, setShowResponse] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const answerText = data?.text || " ";
+  
   return (
     <div className="px-4 sm:px-20">
       <div className="flex flex-col-reverse lg:flex-row text-center lg:text-left justify-between items-center gap-6">
@@ -49,7 +61,13 @@ const LightWorkerPage = () => {
           <div style={{ flex: 2 }} className="mt-16">
             <div className="bg-darkGrey text-white text-center py-10 px-10 relative">
               <p className="text-2xl tracking-wider leading-loose">
-                {DUMMY_TEXT}
+                {/* {DUMMY_TEXT} */}
+                {loading ? (
+                  <div>Loading...</div>
+                ) : (
+                  // show text of thought
+                  {answerText}
+                )}
               </p>
               <button
                 className="px-4 py-2 absolute right-6 bottom-6 share-button"

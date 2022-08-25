@@ -24,7 +24,6 @@ const resolvers = {
       if (context.user) {
         const data = await Sphericle.findOne({ _id: _id }).select("-__v");
         return data;
-        //^^^fixed the error with invalid token and being unauthorized ^
       }
 
       throw new AuthenticationError("Not logged in");
