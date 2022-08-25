@@ -24,7 +24,7 @@ const LightWorkerPage = () => {
   
   const [showResponse, setShowResponse] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const answerText = data;
+  const answerText = data?.text || " ";
   
   return (
     <div className="px-4 sm:px-20">

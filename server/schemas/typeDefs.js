@@ -4,7 +4,7 @@ const typeDefs = gql`
   type Query {
     me: User
     getAllUsers: [User]
-    getSingleSphericle: Sphericle
+    getSingleSphericle(id: ID!): Sphericle
     getByCategory(category: String): [Sphericle]
   }
   type Sphericle {
