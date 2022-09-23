@@ -6,7 +6,9 @@ import dislike from "../assets/images/dislike.png";
 import circle from "../assets/images/circle.png";
 import ShareModal from "../components/Modal/Modal.js";
 import { BsFillShareFill } from "react-icons/bs";
+import Answer from '../components/Answer';
 
+//
 const DUMMY_TEXT = `"Your Divine Life Purpose involves the giving
 of service through your natural talents,
 passions, and interests."`;
@@ -14,6 +16,7 @@ passions, and interests."`;
 const LightWorkerPage = () => {
   const [showResponse, setShowResponse] = useState(false);
   const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="px-4 sm:px-20">
       <div className="flex flex-col-reverse lg:flex-row text-center lg:text-left justify-between items-center gap-6">
@@ -50,6 +53,8 @@ const LightWorkerPage = () => {
             <div className="bg-darkGrey text-white text-center py-10 px-10 relative">
               <p className="text-2xl tracking-wider leading-loose">
                 {DUMMY_TEXT}
+                {/* TODO: Replace DUMMY_TEXT with the Answer component. Pass category name as props*/}
+                <Answer />
               </p>
               <button
                 className="px-4 py-2 absolute right-6 bottom-6 share-button"
