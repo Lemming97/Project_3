@@ -6,7 +6,7 @@ import dislike from "../assets/images/dislike.png";
 import circle from "../assets/images/circle.png";
 import ShareModal from "../components/Modal/Modal.js";
 import { BsFillShareFill } from "react-icons/bs";
-import Answer from '../components/Answer';
+import Answer from '../components/Answer/Answer';
 
 //
 const DUMMY_TEXT = `"Your Divine Life Purpose involves the giving
@@ -35,6 +35,8 @@ const LightWorkerPage = () => {
         <div className="flex-1">
           <img src={wandImg} alt="" className="w-96" />
         </div>
+
+        {/* replace below with Answer component */}
         {!showResponse && (
           <div style={{ flex: 2 }} className="lg:mt-14 lg:ml-20">
             <h1 className="uppercase text-4xl tracking-widest">I am Ready</h1>

@@ -16,6 +16,7 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     getAllUsers: async () => {
+      // add authentication to make find requests? 
       const userData = await User.find({}).select("-__v -password");
 
       return userData;
@@ -30,15 +31,15 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     getByCategory: async (parent, { category }, context) => {
-      if (context.user) {
+      // if (context.user) {
         const categoryData = await Sphericle.find({
           category: category,
         }).select("-__v");
 
         return categoryData;
-      }
+      // }
 
-      throw new AuthenticationError("Not logged in");
+      // throw new AuthenticationError("Not logged in");
     },
   },
 

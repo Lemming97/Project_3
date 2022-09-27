@@ -37,7 +37,6 @@ export const GET_BY_CATEGORY = gql`
     getByCategory($category: String!) {
       getByCategory(category: $category) {
         text
-        category
         voteCount
       }
     }
